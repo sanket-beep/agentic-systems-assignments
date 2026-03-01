@@ -14,4 +14,4 @@ marks = [float(mark) for mark in marks]
 
 Student1 = StudentMarks(marks)
 
-print(Student1.last_three_avg())
+print(f"Average of last 3 marks is: {Student1.last_three_avg()}")

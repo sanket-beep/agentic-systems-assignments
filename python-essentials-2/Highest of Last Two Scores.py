@@ -13,4 +13,4 @@ scores = [float(score) for score in scores]
 
 student1 = StudentScores(scores)
 
-print(student1.highest_score())
+print(f"Highest score among last two is: {student1.highest_score()}")
