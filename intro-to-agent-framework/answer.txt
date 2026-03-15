@@ -1,0 +1,32 @@
+Frameworks are essential for building agentic AI systems because they accelerate development, avoid reinventing core components like memory and orchestration, and provide production-ready features such as error handling, security, and scalability, reducing the risk of project failure.
+
+Framework Categories
+Agentic AI frameworks generally fall into architectural categories based on agent collaboration: single-agent systems for focused tasks; multi-agent systems where specialized agents collaborate; vertical architectures with a lead agent delegating to subordinates; horizontal architectures where agents work as equals; and hybrid approaches combining these.
+
+Key Characteristics
+LangChain
+LangChain offers modular building blocks like prompt templates, memory systems, tool executors, and agent loops for composing LLM-powered agents, emphasizing workflow orchestration and chaining.
+​
+
+LangGraph
+An extension of LangChain, LangGraph models agent workflows as graphs with nodes (LLMs, tools) and edges for transitions, providing stateful, checkpointable, observable systems ideal for reliable multi-step processes.
+
+CrewAI
+CrewAI focuses on multi-agent collaboration through roles, backstories, goals, and tools, supporting vertical hierarchies where agents delegate tasks in event-driven, modular crews or flows.
+​
+
+AutoGen
+AutoGen enables conversational multi-agent systems with patterns like reflection, planning, tool use, and human-in-the-loop collaboration, excelling in dynamic, role-adaptive horizontal interactions.
+
+Google ADK
+Google's Agent Development Kit (ADK) is a model-agnostic framework for software-like agent development, featuring flexible orchestration (sequential, parallel, loops), multi-agent hierarchies, rich tools, evaluation, and deployment options optimized for Gemini but broadly compatible.
+​
+
+Vercel AI SDK
+Vercel AI SDK provides a unified interface for tool-calling and agent loops (sequential, parallel, feedback, orchestration, routing), designed for easy deployment of JavaScript/TypeScript agents on Vercel's serverless infrastructure with model flexibility.
+
+N8N
+N8N, a workflow automation tool, integrates LangChain agent nodes for agentic workflows, supporting single/multi-agent teams in mesh, hierarchical, or hybrid structures via no-code/low-code nodes for adaptive, non-linear processes.
+
+Selecting a Framework
+Choose based on use case needs: opt for graph-based like LangGraph for complex branching; role-focused CrewAI or AutoGen for collaboration; deployment-centric like Vercel AI SDK or ADK for production scaling; or low-code N8N for quick automations. Evaluate factors like LLM support, memory types, infrastructure compatibility (e.g., self-hosted vs. cloud), cost controls, and prototyping speed via a proof-of-concept checklist matching your task complexity, team skills, and scalability requirements.
