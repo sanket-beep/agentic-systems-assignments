@@ -3,7 +3,9 @@ import re
 import uuid
 from pathlib import Path
 from typing import Dict, List
-
+from typing import cast
+from chromadb.api.types import EmbeddingFunction, Embeddable
+from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
 import chromadb
 from chromadb.config import Settings
 from chromadb.utils.embedding_functions import OpenAIEmbeddingFunction
@@ -94,9 +96,14 @@ def get_collection():
     if not os.getenv("OPENAI_API_KEY"):
         raise EnvironmentError("OPENAI_API_KEY is not set. Export it before running the script.")
 
-    embedding_function = OpenAIEmbeddingFunction(
+    raw_embedding_function = OpenAIEmbeddingFunction(
         api_key_env_var="OPENAI_API_KEY",
         model_name=EMBEDDING_MODEL,
+    )
+
+    embedding_function = cast(
+        EmbeddingFunction[Embeddable],
+        raw_embedding_function,
     )
 
     client = chromadb.PersistentClient(
@@ -111,7 +118,6 @@ def get_collection():
     )
     print(f"Vector DB ready. Collection: {COLLECTION_NAME}")
     return collection
-
 
 def build_knowledge_base():
     collection = get_collection()
